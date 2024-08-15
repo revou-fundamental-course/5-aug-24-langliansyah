@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Berat Badan Ideal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Kalkulator BMI</h1>
+        <p class="description">Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
+        <form id="bmiForm">
+            <div class="input-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Lelaki</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Wanita</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Berat Badan (kg):</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-pencil-alt input-icon"></i>
+                    <input type="number" id="weight" placeholder="Masukkan berat badan" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Usia (tahun):</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-pencil-alt input-icon"></i>
+                    <input type="number" id="age" placeholder="Masukkan usia" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="height">Tinggi Badan (cm):</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-pencil-alt input-icon"></i>
+                    <input type="number" id="height" placeholder="Masukkan tinggi badan" required>
+                </div>
+            </div>
+            
+            <button type="button" id="calculateBMIButton" onclick="calculateBMI()">Hitung BMI</button>
+            <button type="reset" id="resetButton" class="reset-button">Reset</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <!-- Modal for displaying BMI result -->
+    <div id="bmiModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div id="bmiResultContainer">
+                <h2>Hasil BMI</h2>
+                <p id="bmiCategory"></p>
+                <p id="bmiValue"></p>
+                <p id="bmiMessage"></p>
+                <button id="downloadButton" onclick="downloadResult()">Unduh Hasil</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
